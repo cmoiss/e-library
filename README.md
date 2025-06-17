@@ -23,6 +23,8 @@
 - [Gabriel Patrício (@H4RDZ1N)](https://github.com/H4RDZ1N)
 - [William Carvalho (@WillzCarvalho)](https://github.com/WillzCarvalho)
 - [Breno Eduardo (@br3idk)](https://github.com/WillzCarvalho)
+- [Nycolas Justino (@nyckturbina)](https://github.com/nyckturbina)
+- Rodolfo Ribeiro
 ---
 
 ### Contribuições  
@@ -42,14 +44,27 @@
 
 **Caio Souza**  
 > "Aprendi a gerenciar equipes considerando pontos fortes/fracos, bem como ensiná-los conceitos técnicos. Além de integrar frontend/backend usando uma API Rest."
+
+**William Carvalho**  
+> "Aprendi a utilizar o básico de Java Spring Boot, a criação de Controller para tratar as requisições HTTP, além da implementação de DTOs para separar dados entre o frontend e backend. E aprendi sobre a tratar e implementar exceções para lidar com erros."
+
 **Matheus Rondon**
 > "Nesse período de tempo estudei e coloquei em pratica o uso de camadas de classes, estruturação e comunicação em projetos, gerenciamento e comandos de git e git hub, e o uso do spring."
-**William Carvalho**
-> "Aprendi a utilizar o básico de Java Spring Boot, a criação de Controller para tratar as requisições HTTP, além da implementação de DTOs para separar dados entre o frontend e backend. E aprendi sobre a tratar e implementar exceções para lidar com erros"
+
 **Breno Eduardo**
-> "Aprofundei meus conhecimetos em React e experienciei o uso de frameworks que auxiliam na construção de componentes, como o shadcn/ui. Além disso, sofistiquei minhas habilidades em versionamento de código com Git e GitHub"
+> "Aprofundei meus conhecimentos em React e experienciei o uso de frameworks que auxiliam na construção de componentes, como o shadcn/ui. Sofistiquei minhas habilidades em versionamento de código com Git e GitHub. Além disso, o trabalho em equipe foi bastante proveitoso para dividir conhecimento."
+
 **Gabriel Patrício***
-> "Aprendi como fazer os testes unitários e de integração no Java, como utilizar o SpringBoot,  JUnit e Mockito, e como funciona na prática o TDD"
+> "Com esse projeto, eu aprendi como funciona um projeto mais avançado trabalhando em conjunto com várias pessoas no GitHub, me reaproximei a programar em Java e aprendi como fazer os testes unitários, testes de integração, como utilizar o SpringBoot, JUnit, Mockito, como funciona na prática o TDD, e a maneira que é construída o projeto da ideia inicial até o resultado final"
+
+**Nycolas Justino**
+> "Nesse projeto tive uma experiência admirável com design, sendo satisfatório colocar um hobby em uma parte do trabalho. Também pude fazer o uso de teste, tanto unitário como de integração onde nunca imaginei usar esse estilo de organização em algum código. Foi uma experiência um pouco desgastante, mas bem satisfatória ao ver a funcionalidade de tudo, e ao utilizar o Mock, TDD e SpringBoot. É uma visão futura de carreira. Foi uma experiência maravilhosa."
+
+**Igor Vinícius**
+>"Nesse projeto eu aprender como funciona o SpringBoot e sua estrutura de funcionamento, além disso melhorei minhas habilidades de versionamento de código, trabalho em equipe e praticas de desenvolvimento."
+
+**Rodolfo Ribeiro**
+> "Neste trabalho, tive minha primeira experiência profissional como Scrum Master.  No geral, obtive bastante bagagem e conhecimento sobre os desafios de manter atualizadas as ferramentas de suporte ao trabalho, além de aprender a montar diagramas de entidade-relacionamento."
 
 ---
 
