@@ -12,11 +12,18 @@ public class LivroMapperDTO {
                 request.genero(),
                 request.isbn(),
                 request.sinopse(),
-                request.quantidade()
+                request.quantidade(),
+                request.numeroPaginas(),
+                request.avaliacao()
         );
     }
 
     public static LivroResponseDTO toResponse(Livro livro) {
+        double mediaAvaliacao = 0.0;
+        if (livro.getTotalAvaliacoes() != null && livro.getTotalAvaliacoes() > 0) {
+            mediaAvaliacao = (double) livro.getAvaliacao() / livro.getTotalAvaliacoes();
+        }
+
         return new LivroResponseDTO(
                 livro.getId(),
                 livro.getTitulo(),
@@ -24,7 +31,9 @@ public class LivroMapperDTO {
                 livro.getGenero(),
                 livro.getIsbn(),
                 livro.getSinopse(),
-                livro.getQuantidadeTotal()
+                livro.getExemplaresDisponiveisEmEstoque(),
+                livro.getNumeroPaginas(),
+                mediaAvaliacao
         );
     }
 }

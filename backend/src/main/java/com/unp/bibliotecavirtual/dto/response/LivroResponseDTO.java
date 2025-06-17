@@ -7,6 +7,8 @@ public record LivroResponseDTO(
         String genero,
         String isbn,
         String sinopse,
-        Integer quantidadeTotal
+        Integer quantidadeTotal,
+        Integer numeroPaginas,
+        Double avaliacao
 ) {
 }

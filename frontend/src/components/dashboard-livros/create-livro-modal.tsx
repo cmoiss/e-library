@@ -26,7 +26,7 @@ export default function CreateLivroModal() {
 
         <DialogContent className="overflow-y-auto max-h-[90vh]">
           <DialogHeader>
-            <DialogTitle>Cadastrar livro</DialogTitle>
+            <DialogTitle>Cadastrar Cliente</DialogTitle>
             <DialogDescription>
               Insira os dados nos campos abaixo.
             </DialogDescription>
@@ -35,7 +35,7 @@ export default function CreateLivroModal() {
           <CreateLivroForm onSuccess={() => setIsOpen(false)} />
 
           <DialogFooter>
-            <DialogClose>
+            <DialogClose asChild>
               <Button variant={"ghost"} type="button">
                 Cancelar
               </Button>

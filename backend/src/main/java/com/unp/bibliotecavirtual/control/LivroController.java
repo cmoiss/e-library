@@ -2,7 +2,9 @@ package com.unp.bibliotecavirtual.control;
 
 import com.unp.bibliotecavirtual.dto.mapper.LivroMapperDTO;
 import com.unp.bibliotecavirtual.dto.request.LivroRequestDTO;
+import com.unp.bibliotecavirtual.dto.request.RateBookRequestDTO;
 import com.unp.bibliotecavirtual.dto.response.LivroResponseDTO;
+import com.unp.bibliotecavirtual.exceptions.LivroNotFoundException;
 import com.unp.bibliotecavirtual.model.Livro;
 import com.unp.bibliotecavirtual.service.LivroService;
 import jakarta.validation.Valid;
@@ -35,22 +37,29 @@ public class LivroController {
     public ResponseEntity<LivroResponseDTO> buscarPorId(@PathVariable Long id) {
         Livro livro = service.buscarPorId(id);
         LivroResponseDTO response = toResponse(livro);
-        return ResponseEntity.status(FOUND).body(response);
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/isbn/{isbn}")
+    public ResponseEntity<?> buscarPorIsbn(@PathVariable String isbn) {
+        try {
+            Livro livro = service.buscarPorIsbn(isbn);
+            LivroResponseDTO response = toResponse(livro);
+            return ResponseEntity.ok(response);
+        } catch (LivroNotFoundException e) {
+            return ResponseEntity.status(NOT_FOUND).body(e.getMessage());
+        }
     }
 
     @GetMapping
     public ResponseEntity<List<LivroResponseDTO>> buscarTodos() {
         List<Livro> livros = service.buscarTodos();
-        List<LivroResponseDTO> response = livros.stream()
-                .map(LivroMapperDTO::toResponse)
-                .collect(Collectors.toList());
+        List<LivroResponseDTO> response = livros.stream().map(LivroMapperDTO::toResponse).collect(Collectors.toList());
         return ResponseEntity.ok(response);
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<LivroResponseDTO> editar(
-            @PathVariable Long id, @RequestBody @Valid LivroRequestDTO request
-    ) {
+    public ResponseEntity<LivroResponseDTO> editar(@PathVariable Long id, @RequestBody @Valid LivroRequestDTO request) {
         Livro livroAtualizado = toEntity(request);
 
         Livro novoLivro = service.editar(id, livroAtualizado);
@@ -64,5 +73,16 @@ public class LivroController {
         Livro livro = service.buscarPorId(id); // Verifica se existe
         service.deletar(livro);
         return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping(value = "/avaliar")
+    public ResponseEntity<?> avaliarLivro(@RequestBody @Valid RateBookRequestDTO request) {
+        try {
+            Livro ratedBook = service.avaliarLivro(request.bookId(), request.rate());
+            LivroResponseDTO response = toResponse(ratedBook);
+            return ResponseEntity.ok(response);
+        } catch (LivroNotFoundException e) {
+            return ResponseEntity.status(NOT_FOUND).body(e.getMessage());
+        }
     }
 }
