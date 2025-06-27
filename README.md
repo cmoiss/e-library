@@ -1,77 +1,153 @@
+# 📚 E-Library - Biblioteca Virtual  
+
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat&logo=spring&logoColor=white)](https://spring.io/)
 [![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![H2 Database](https://img.shields.io/badge/H2_Database-1F6FEB?style=flat&logo=h2&logoColor=white)]()
 [![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white)](https://git-scm.com/)
-[![Status](https://img.shields.io/badge/STATUS-EM%20ANDAMENTO-orange)](https://github.com/cmoiss/biblioteca)
+[![Status](https://img.shields.io/badge/STATUS-CONCLUÍDO-brightgreen)](https://github.com/cmoiss/biblioteca)
 [![Licença](https://img.shields.io/badge/LICENÇA-MIT-blue)](https://opensource.org/licenses/MIT)
 
-# E-Library  
-
-**Projeto avaliativo de um sistema de biblioteca**  
-
-## Padrões de Projeto utilizados
-- MVC: Para definir a responsabilidade de cada pacote
-- DTOs: Para encapsulamento da estrutura de dados presentes no backend
-<!-- - Strategy -->
+Sistema de biblioteca virtual desenvolvido como projeto acadêmico, permitindo empréstimos digitais, gestão de acervo e recomendações personalizadas.
 
 ---
 
-## Créditos  
+## 🏗️ Arquitetura do Sistema
 
-- [Caio Souza (@cmoiss)](https://github.com/cmoiss)  
-- [Igor Vinícius (@Igorzon1)](https://github.com/Igorzon1)  
-- [Matheus Rondon (@matheusrv0)](https://github.com/matheusrv0)
-- [Gabriel Patrício (@H4RDZ1N)](https://github.com/H4RDZ1N)
-- [William Carvalho (@WillzCarvalho)](https://github.com/WillzCarvalho)
-- [Breno Eduardo (@br3idk)](https://github.com/WillzCarvalho)
-- [Nycolas Justino (@nyckturbina)](https://github.com/nyckturbina)
-- Rodolfo Ribeiro
+![image](https://github.com/user-attachments/assets/0c9e72b5-ee6c-462c-8431-3fa76e81bd10)
+
+
+### 🔍 Componentes Principais
+1. **Cliente (Frontend)**
+   - Aplicação web responsiva (Next.js + Tailwind CSS)
+   - Funcionalidades:
+     - Busca de livros
+     - Solicitação de empréstimos
+     - Acompanhamento de prazos e multas
+     - Avaliação de livros
+
+2. **API (Backend)**
+   - RESTful API (Spring Boot)
+   - Responsável por:
+     - Lógica de negócios
+     - Gestão de empréstimos
+     - Cálculo de multas
+     - Geração de relatórios
+
+3. **Banco de Dados**
+   - H2 Database (persistência em disco)
+   - Armazena:
+     - Catálogo de livros
+     - Registros de usuários
+     - Histórico de transações
+
 ---
 
-### Contribuições  
+## 🚀 Como Executar o Projeto
+
+### Pré-requisitos
+- Node.js 16+
+- Java JDK 17+
+- Maven 3.8+
+- Git
+
+### Instalação
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/e-library.git
+   cd e-library
+   ```
+
+2. **Backend (Spring Boot)**
+   ```bash
+   cd backend
+   mvn spring-boot:run
+   ```
+
+3. **Frontend (Next.js)**
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
+   ```
+
+4. Acesse:
+   - Frontend: `http://localhost:3000`
+   - API Docs: `http://localhost:8080/swagger-ui.html`
+
+---
+
+## 📌 Funcionalidades Principais
+
+### Para Clientes
+- ✅ Busca avançada de livros (título, autor, ISBN)
+- ✅ Empréstimo virtual com prazo calculado automaticamente
+- ✅ Painel de controle com livros emprestados
+- ✅ Sistema de avaliação (like/dislike)
+- ✅ Recomendações personalizadas
+
+### Para Administradores
+- 🔒 CRUD completo de livros e exemplares
+- 📊 Geração de relatórios (empréstimos, devoluções)
+- 👥 Gerenciamento de usuários
+- ⏰ Configuração de prazos e multas
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+| Área         | Tecnologias                                                                 |
+|--------------|-----------------------------------------------------------------------------|
+| **Frontend** | Next.js, Tailwind CSS, Axios, React Hook Form                               |
+| **Backend**  | Spring Boot, JPA/Hibernate, Lombok               |
+| **Banco**    | H2 Database (dev)                                     |
+| **Testes**   | JUnit, Mockito                                     |
+| **Outros**   | Git, Postman                                               |
+
+---
+
+## 📂 Estrutura do Projeto
+
+```
+e-library/
+├── backend/               # Código Spring Boot
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/
+│   │   │   │   ├── controller/   # Endpoints REST
+│   │   │   │   ├── model/        # Entidades JPA
+│   │   │   │   ├── repository/   # Interfaces DAO
+│   │   │   │   ├── service/      # Lógica de negócio
+│   │   │   │   └── dto/          # Objetos de transferência
+│   │   │   └── resources/        # application.properties
+│   │   └── test/                 # Testes unitários/integração
+│   └── pom.xml
+│
+├── frontend/              # Aplicação Next.js
+│   ├── app/               # Páginas da aplicação
+│   ├── components/        # Componentes React
+│   ├── services/          # Chamadas à API
+│   └── package.json
+│
+├── docs/                  # Documentação
+└── README.md              # Este arquivo
+```
+
+---
+
+## ✨ Equipe
 
 | Função               | Integrantes                          |
 |----------------------|--------------------------------------|
-| Project Manager/Tech Lead | Caio                            |
-| Scrum Master         | Rodolfo Ribeiro                      |
-| Frontend             | Caio e Breno                         |
-| Design               | Nycolas                              |
-| Backend              | Caio, Igor, William, Matheus         |
-| Tester               | Caio, Gabriel, Nycolas               |
+| **Tech Lead**        | [Caio Souza](https://github.com/cmoiss) |
+| **Scrum Master**     | Rodolfo Ribeiro                      |
+| **Frontend**         | Caio e [Breno Eduardo (@br3idk)](https://github.com/br3idk)      |
+| **Design**           | [Nycolas Justino (@nyckturbina)](https://github.com/nyckturbina)                              |
+| **Backend**          | Caio, [Igor Vinícius (@Igorzon1)](https://github.com/Igorzon1), [William Carvalho (@WillzCarvalho)](https://github.com/WillzCarvalho), [Matheus Rondon (@matheusrv0)](https://github.com/matheusrv0)         |
+| **Testes**           | Caio, [Gabriel Patrício (@H4RDZ1N)](https://github.com/H4RDZ1N), Nycolas               |
+
+
 
 ---
 
-## 🎯 O que aprendi  
-
-**Caio Souza**  
-> "Aprendi a gerenciar equipes considerando pontos fortes/fracos, bem como ensiná-los conceitos técnicos. Além de integrar frontend/backend usando uma API Rest."
-
-**William Carvalho**  
-> "Aprendi a utilizar o básico de Java Spring Boot, a criação de Controller para tratar as requisições HTTP, além da implementação de DTOs para separar dados entre o frontend e backend. E aprendi sobre a tratar e implementar exceções para lidar com erros."
-
-**Matheus Rondon**
-> "Nesse período de tempo estudei e coloquei em pratica o uso de camadas de classes, estruturação e comunicação em projetos, gerenciamento e comandos de git e git hub, e o uso do spring."
-
-**Breno Eduardo**
-> "Aprofundei meus conhecimentos em React e experienciei o uso de frameworks que auxiliam na construção de componentes, como o shadcn/ui. Sofistiquei minhas habilidades em versionamento de código com Git e GitHub. Além disso, o trabalho em equipe foi bastante proveitoso para dividir conhecimento."
-
-**Gabriel Patrício***
-> "Com esse projeto, eu aprendi como funciona um projeto mais avançado trabalhando em conjunto com várias pessoas no GitHub, me reaproximei a programar em Java e aprendi como fazer os testes unitários, testes de integração, como utilizar o SpringBoot, JUnit, Mockito, como funciona na prática o TDD, e a maneira que é construída o projeto da ideia inicial até o resultado final"
-
-**Nycolas Justino**
-> "Nesse projeto tive uma experiência admirável com design, sendo satisfatório colocar um hobby em uma parte do trabalho. Também pude fazer o uso de teste, tanto unitário como de integração onde nunca imaginei usar esse estilo de organização em algum código. Foi uma experiência um pouco desgastante, mas bem satisfatória ao ver a funcionalidade de tudo, e ao utilizar o Mock, TDD e SpringBoot. É uma visão futura de carreira. Foi uma experiência maravilhosa."
-
-**Igor Vinícius**
->"Nesse projeto eu aprender como funciona o SpringBoot e sua estrutura de funcionamento, além disso melhorei minhas habilidades de versionamento de código, trabalho em equipe e praticas de desenvolvimento."
-
-**Rodolfo Ribeiro**
-> "Neste trabalho, tive minha primeira experiência profissional como Scrum Master.  No geral, obtive bastante bagagem e conhecimento sobre os desafios de manter atualizadas as ferramentas de suporte ao trabalho, além de aprender a montar diagramas de entidade-relacionamento."
-
----
-
-### Destaques do Projeto  
-
-✨ **Colaboração**: Trabalho em equipe multidisciplinar  
-🚀 **Tecnologias**: Spring Boot, NextJS, Git  
-📈 **Soft Skills**: Gestão de tempo, comunicação ágil  
-
-*(Atualizado em 17/06/2025)*  
+> "Projeto desenvolvido como parte da disciplina Engenharia de Software, demonstrando na prática conceitos de desenvolvimento fullstack, gestão de projetos e trabalho em equipe." *(Atualizado em Jun/2025)*
